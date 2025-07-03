@@ -21,7 +21,9 @@ app.set("layout", "./layouts/layout") // not at views root
 /* ***********************
  * Routes
  *************************/
-app.use(static)
+app.use(express.static("public"));
+app.use(static);
+
 // Index route
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" })
@@ -31,7 +33,12 @@ app.get("/", (req, res) => {
  * Local Server Information
  * Values from .env (environment) file
  *************************/
-const port = process.env.PORT || 5500; // fallback for local
+const port = process.env.PORT
+const host = process.env.HOST
+
+/* ***********************
+ * Log statement to confirm server operation
+ *************************/
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+  console.log(`app listening on ${host}:${port}`)
+})
