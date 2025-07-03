@@ -11,31 +11,42 @@ body {
   padding: 0;
   color: #333;
 }
-
-header {
-  background: #1a1a1a;
-  color: #fff;
+main {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1rem;
 }
-
-header .logo h1 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-nav {
+header {
+  background: #4533a7;
+  color: #fff;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: row;
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+.siteName {
+  font-size: 2rem;
+  font-weight: bold;  
+}
+nav {
+  display: flex;
+  width: 100%;
+  font-size: 1.5rem;
 }
 
 nav ul {
   list-style: none;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   gap: 1rem;
-  padding: 0;
-  margin: 0;
+  width: 100%;
 }
 
 nav a {
@@ -43,21 +54,40 @@ nav a {
   text-decoration: none;
 }
 
+nav li:hover {
+    color: rgb(228, 114, 21);
+    text-decoration: underline;
+    cursor: pointer; 
+}
+
 .account-link {
   font-size: 0.9rem;
 }
 
 .hero {
+  position:relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: #e8f4f8;
+  align-items: baseline;
+  
   padding: 1rem;
   text-align: center;
 }
-
+.hero-text {
+  background-color: rgba(255, 255, 255, 0.8);
+  
+}
 .hero-text h2 {
   color: #007acc;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;  
 }
 
 .btn-own {
@@ -72,18 +102,30 @@ nav a {
 
 .content {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  
+
 }
 
 .upgrade-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 5px;
+  text-align: center;
 }
 
 .upgrade-grid a {
   text-align: center;
+  font-size: 1.2rem;
   text-decoration: none;
-  color: #333;
+  color: #e4a7a7;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  max-width: 250px;
+  background-color:#007acc;
 }
 
 .upgrade-grid img {
@@ -92,8 +134,7 @@ nav a {
 }
 
 footer {
-  background: #1a1a1a;
-  color: #fff;
+  color: #000000;
   text-align: center;
   padding: 0.5rem;
   font-size: 0.9rem;
@@ -123,4 +164,60 @@ ul {
   nav {
     justify-content: space-between;
   }
+
+  .content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
+  .reviews {
+    order: 2; 
+  }
+  .upgrades {
+    order: 1; 
+  }
+  .upgrade-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
+  text-align: center;
+}
+
+.upgrade-grid a {
+  text-align: center;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #e4a7a7;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  max-width: 300px;
+  background-color:#007acc;
+}
+
+
+body {
+  background-image : url('/images/site/checkerboard.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  margin: 20px;
+}
+
+#wrapper {
+  background-color: white;
+  border: solid ;
+  border-radius: 10px;
+  border-color: rgb(139, 218, 103);
+  border-width: 8px;
+}
+.hero-image {
+
+  z-index: 0; 
+}
+
+.hero-text {
+  z-index:1;
+}
 }
