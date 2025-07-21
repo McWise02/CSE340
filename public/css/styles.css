@@ -163,6 +163,7 @@ ul {
 
   nav {
     justify-content: space-between;
+    background-color: black;
   }
 
   .content {
