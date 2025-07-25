@@ -222,3 +222,67 @@ body {
   z-index:1;
 }
 }
+
+
+/* Product Page CSS*/
+.vehicle-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  align-items: flex-start;
+}
+
+.vehicle-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.vehicle-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.vehicle-info {
+  flex: 1 1 400px;
+  font-size: 1.1rem;
+}
+
+.vehicle-info h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.vehicle-info .price {
+  font-size: 1.8rem;
+  color: #006400;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.vehicle-info p {
+  margin-bottom: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .vehicle-detail {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .vehicle-image, .vehicle-info {
+    flex: 1 1 100%;
+  }
+
+  .vehicle-info h1 {
+    font-size: 1.6rem;
+  }
+
+  .vehicle-info .price {
+    font-size: 1.5rem;
+  }
+}

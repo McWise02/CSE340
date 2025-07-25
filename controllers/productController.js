@@ -11,8 +11,10 @@ product_details.buildByProductId = async function (req, res, next) {
   const productId = req.params.id 
   const data = await productModel.getProductById(productId)
   const grid = await utilities.buildProductGrid([data])
+  console.log("Product Data:", data)
     let nav = await utilities.getNav()
-    const productName = data.inv_make + " " + data.inv_model + " " + data.inv_year
+    const productName = `${data.inv_make} ${data.inv_model} ${data.inv_year}`
+    console.log("RENDERING")
   res.render("./inventory/product", {
     title: productName,
     nav,
