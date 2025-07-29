@@ -309,3 +309,135 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 5px;
 }
+
+.login-container {
+  background-color: #2c3e50; /* dark blue */
+  padding: 2rem;
+  width: 300px;
+  margin: 5% auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #888;
+  color: white;
+}
+.login-container label {
+  display: block;
+  margin-top: 1rem;
+}
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: none;
+  border-radius: 5px;
+}
+.login-container button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  background-color: white;
+  color: #2c3e50;
+  font-weight: bold;
+  cursor: pointer;
+}
+.login-container .flash-message {
+  color: yellow;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.login-container .signup-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+.login-container .signup-link a {
+  color: white;
+  text-decoration: underline;
+}
+
+.register-message {
+  background-color: #1c2e40;
+  color: white;
+  font-size: 0.9rem;
+  border: 1px solid #fff;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+}
+
+.register-message ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.register-message li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.register-container {
+  background-color: #2c3e50;
+  padding: 2rem;
+  width: 300px;
+  margin: 5% auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #888;
+  color: white;
+}
+.register-container label {
+  display: block;
+  margin-top: 1rem;
+}
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: none;
+  border-radius: 5px;
+}
+.register-container button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  background-color: white;
+  color: #2c3e50;
+  font-weight: bold;
+  cursor: pointer;
+}
+.register-container .flash-message {
+  color: yellow;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.register-container .login-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+.register-container .login-link a {
+  color: white;
+  text-decoration: underline;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 8px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  color: #ccc;
+}
+
+#togglePassword:focus {
+  outline: none;
+}

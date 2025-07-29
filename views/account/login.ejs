@@ -1,0 +1,31 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+<div class="login-container">
+  <!-- Flash Message (if any) -->
+ <%- messages() %>
+
+  <form method="POST" action="/login">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="account_email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="account_password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
+
+    <button type="submit">LOGIN</button>
+  </form>
+  <div class="register-message">
+  <ul>
+    <li> Your password must be:</li>
+    <li>🔒 12 characters in length (minimum)</li>
+    <li>🔡 At least 1 capital letter</li>
+    <li>🔢 At least 1 number</li>
+    <li>❗ At least 1 special character</li>
+  </ul>
+</div>
+  <div class="signup-link">
+    No account? <a href="/account/register">Sign-up</a>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+<script src="/js/register.js"></script>
+<div class="register-container">
+  <!-- Flash Message (if any) -->
+  <%- messages() %>
+  <% if (errors) { %>
+    <ul class="notice">
+  <% errors.array().forEach(error => { %>
+    <li><%= error.msg %></li>
+  <%  }) %>
+  </ul>
+  <% } %>
+
+  <form method="POST" action="/account/register">
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="account_firstname" required>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="account_lastname" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="account_email" required>
+
+   <div style="position: relative;">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="account_password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
+    <button type="button" id="togglePassword">
+        👁️
+    </button>
+    </div>
+    <button type="submit">REGISTER</button>
+  </form>
+
+  <div class="register-message">
+  <ul>
+    <li> Your password must be:</li>
+    <li>🔒 12 characters in length (minimum)</li>
+    <li>🔡 At least 1 capital letter</li>
+    <li>🔢 At least 1 number</li>
+    <li>❗ At least 1 special character</li>
+  </ul>
+</div>
+
+  <div class="login-link">
+    Already have an account? <a href="/account/login">Log in</a>
+  </div>
+</div>
