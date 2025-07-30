@@ -9,9 +9,15 @@ router.get("/login", utilities.handleErrors(accountsController.buildLogin));
 router.get("/register", utilities.handleErrors(accountsController.buildRegister));
 router.post(
   "/register",
-  regValidate.registationRules(),
+  regValidate.registrationRules(),
   regValidate.checkRegData,
   utilities.handleErrors(accountsController.registerAccount)
+)
+router.post(
+  "/login",
+  regValidate.loginRules(),
+  regValidate.checkLoginData,
+  utilities.handleErrors(accountsController.validateAccount)
 )
 
 module.exports = router;
