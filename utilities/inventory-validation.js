@@ -19,7 +19,7 @@ const inventoryModel = require("../models/inventory-model")
         .isLength({ min: 1 })
         .isAlpha()
         .matches(/^[a-zA-Z0-9]+$/).withMessage("Please see requiirements for classification name.")
-        .withMessage("Please provide a valid") // on error this message is sent.
+        .withMessage("Please provide a valid classification. See the requirements.") // on error this message is sent.
         .custom(async (classification) => {
                 const classExists = await inventoryModel.checkExistingClassification(classification)
                 if (classExists){
