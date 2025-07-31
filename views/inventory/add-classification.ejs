@@ -1,0 +1,30 @@
+
+<body>
+  <main>
+    <h1>Add a new Classification</h1>
+      <!-- Flash Message (if any) -->
+    <%- messages() %>
+    <% if (errors) { %>
+        <ul class="notice">
+    <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+    <%  }) %>
+    </ul>
+    <% } %>
+    <p>Use this form to enter a new Classification</p>
+
+    <form method="POST" action="/inv/add-classification" class="form-container">
+        <label for="classification" class="form-label">New Classification</label>
+        <input type="text" id="classification" name="classification" class="form-input" required pattern="^[a-zA-Z0-9]+$" value="<%= locals.classification%>">
+        <ul class="form-hints">
+            <li>The classification must:</li>
+            <li>🔒 Not have any Spaces</li>
+            <li>🔒 Not have any Special Characters</li>
+        </ul>
+
+        <button type="submit" class="form-button">Create Classification</button>
+        </form>
+
+  </main>
+</body>
+</html>

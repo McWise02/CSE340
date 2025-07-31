@@ -1,0 +1,22 @@
+
+<body>
+  <main>
+    <h1>Inventory Management</h1>
+      <!-- Flash Message (if any) -->
+    <%- messages() %>
+    <% if (errors) { %>
+        <ul class="notice">
+    <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+    <%  }) %>
+    </ul>
+    <% } %>
+    <p>Use the options below to manage vehicle classifications and inventory.</p>
+
+    <ul class="management-links">
+      <li><a href="/inv/add-classification" class="btn">Add New Classification</a></li>
+      <li><a href="/inv/add-inventory" class="btn">Add New Inventory</a></li>
+    </ul>
+  </main>
+</body>
+</html>

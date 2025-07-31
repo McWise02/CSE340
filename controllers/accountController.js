@@ -10,6 +10,7 @@ async function buildLogin(req, res, next) {
   res.render("account/login", {
     title: "Login",
     nav,
+    errors: null,
   })
 }
 
@@ -93,7 +94,12 @@ async function validateAccount(req, res) {
   if (account) {
     req.session.account = account
     req.flash("notice", `Welcome back, ${account.account_firstname}.`)
-    res.status(200).redirect("/")
+    res.status(200).render("/", {
+      title: "Home",
+      nav,
+      errors: null,
+    }
+    )
   } else {
     req.flash("notice", "Login failed. Please check your email and password.")
     res.status(401).render("account/login", {
