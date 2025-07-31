@@ -8,9 +8,10 @@ const utilities = require("../utilities/")
 // Route to build inventory by classification view
 router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId));
 router.get("/detail/:id", utilities.handleErrors(productController.buildByProductId));
-router.get("/site-name/inv", utilities.handleErrors(invController.buildInventoryManagement));
+router.get("/inv", utilities.handleErrors(invController.buildInventoryManagement));
 router.get("/add-classification", utilities.handleErrors(invController.buildAddClassification));
 router.get("/add-inventory", utilities.handleErrors(invController.buildAddInventory));
+
 router.post(
   "/add-classification",
   invValidate.classificationRules(),
