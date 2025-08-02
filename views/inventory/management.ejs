@@ -1,5 +1,9 @@
 
+
+
+<script src="/js/inventory.js" defer></script>
 <body>
+  
   <main>
     <h1>Inventory Management</h1>
       <!-- Flash Message (if any) -->
@@ -17,6 +21,13 @@
       <li><a href="/inv/add-classification" class="btn">Add New Classification</a></li>
       <li><a href="/inv/add-inventory" class="btn">Add New Inventory</a></li>
     </ul>
+
+    <h2>Manage Inventory</h2>
+    <p>Select a classification from the list below:</p>
+
+    <%- classifications %>
+
+    <table id="inventoryDisplay"></table>
+    <noscript>JavaScript must be enabled to use this page.</noscript>
   </main>
 </body>
-</html>
